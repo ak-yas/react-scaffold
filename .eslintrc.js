@@ -1,6 +1,16 @@
 module.exports = {
-  extends: ['eslint:recommended', 'prettier'],
-  plugins: [],
+  extends: [
+    'eslint:recommended',
+    'plugin:import/errors',
+    'plugin:react/recommended',
+    'plugin:jsx-a11y/recommended',
+    'prettier',
+  ],
+  rules: {
+    'react/react-in-jsx-scope': 'off',
+    'react/prop-types': 'off',
+  },
+  plugins: ['react', 'import', 'jsx-a11y'],
   parserOptions: {
     ecmaVersion: 2022,
     sourceType: 'module',
@@ -12,5 +22,10 @@ module.exports = {
     browser: true,
     es2021: true,
     node: true,
+  },
+  settings: {
+    react: {
+      version: 'detect',
+    },
   },
 }

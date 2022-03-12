@@ -18,11 +18,13 @@
   "devDependencies": {
     "eslint": "^8.11.0",
     "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.29.3",
     "parcel": "^2.3.2",
     "prettier": "^2.5.1"
   },
-  "browserslist":[
+  "browserslist": [
     "last 2 chrome versions"
-
   ]
 }
