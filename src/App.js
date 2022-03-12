@@ -1,13 +1,7 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
+import { render } from 'react-dom'
+import Pet from './components/pet'
 
-const Pet = (props) => {
-  return React.createElement('div', {}, [
-    React.createElement('h1', {}, props.name),
-    React.createElement('h1', {}, props.animal),
-    React.createElement('h2', {}, props.breed),
-  ])
-}
 const App = () => {
   return React.createElement('div', {}, [
     React.createElement('h1', {}, 'Adopt me pls!'),
@@ -32,4 +26,4 @@ const App = () => {
 let myApp = App()
 console.log(myApp)
 
-ReactDOM.render(myApp, document.querySelector('#root'))
+render(myApp, document.querySelector('#root'))
