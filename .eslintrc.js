@@ -3,6 +3,7 @@ module.exports = {
     'eslint:recommended',
     'plugin:import/errors',
     'plugin:react/recommended',
+    'plugin:react-hooks/recommended',
     'plugin:jsx-a11y/recommended',
     'prettier',
   ],
@@ -10,7 +11,7 @@ module.exports = {
     'react/react-in-jsx-scope': 'off',
     'react/prop-types': 'off',
   },
-  plugins: ['react', 'import', 'jsx-a11y'],
+  plugins: ['react', 'import', 'jsx-a11y', 'react-hooks'],
   parserOptions: {
     ecmaVersion: 2022,
     sourceType: 'module',
