@@ -31,6 +31,7 @@ const SearchParams = () => {
           event.preventDefault()
           requestPets()
         }}
+        style={{ marginBottom: '50px' }}
       >
         <label htmlFor="location">
           Location
