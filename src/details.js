@@ -1,5 +1,6 @@
 import { Component } from 'react'
 import { useParams } from 'react-router-dom'
+import Carousel from './components/carousel'
 
 class Details extends Component {
   state = { loading: true }
@@ -10,10 +11,6 @@ class Details extends Component {
     )
     const data = await res.json()
     this.setState({ loading: false, ...data.pets[0] })
-
-    setTimeout(function () {
-      console.log(this.state)
-    }, 5000)
   }
 
   render() {
@@ -24,6 +21,7 @@ class Details extends Component {
 
     return (
       <div className="details">
+        <Carousel images={images} />
         <div>
           <h1>{name}</h1>
           <h2>
@@ -31,24 +29,6 @@ class Details extends Component {
           </h2>
           <button>Adopt {name}</button>
           <p>{description}</p>
-        </div>
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            flexWrap: 'wrap',
-            marginTop: '50px',
-          }}
-        >
-          {images.map((src, i) => (
-            <img
-              src={src}
-              alt={name}
-              key={i}
-              style={{ width: '30%', height: '30%' }}
-            />
-          ))}
         </div>
       </div>
     )
