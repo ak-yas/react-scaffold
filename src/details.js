@@ -2,11 +2,7 @@ import { Component } from 'react'
 import { useParams } from 'react-router-dom'
 
 class Details extends Component {
-  constructor(props) {
-    super(props)
-
-    this.state = { loading: true }
-  }
+  state = { loading: true }
 
   async componentDidMount() {
     const res = await fetch(
@@ -24,9 +20,8 @@ class Details extends Component {
     if (this.state.loading) {
       return <h1>loading...</h1>
     }
-
     const { name, animal, breed, city, state, description, images } = this.state
-    
+
     return (
       <div className="details">
         <div>
