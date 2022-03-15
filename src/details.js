@@ -1,6 +1,7 @@
 import { Component } from 'react'
 import { useParams } from 'react-router-dom'
 import Carousel from './components/carousel'
+import ErrorBoundary from './components/errorBoundary'
 
 class Details extends Component {
   state = { loading: true }
@@ -17,6 +18,7 @@ class Details extends Component {
     if (this.state.loading) {
       return <h1>loading...</h1>
     }
+
     const { name, animal, breed, city, state, description, images } = this.state
 
     return (
@@ -37,7 +39,11 @@ class Details extends Component {
 
 const WrapperDetails = () => {
   const params = useParams()
-  return <Details params={params} />
+  return (
+    <ErrorBoundary>
+      <Details params={params} />
+    </ErrorBoundary>
+  )
 }
 
 export default WrapperDetails
